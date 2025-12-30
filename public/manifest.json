@@ -1,9 +1,10 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-  "name": "qwik-project-name",
-  "short_name": "Welcome to Qwik",
+  "name": "SolAmp Living",
+  "short_name": "SolAmp",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#fff",
-  "description": "A Qwik project app."
+  "background_color": "#ffffff",
+  "theme_color": "#f59e0b",
+  "description": "SolAmp Living - Sustainable Solar Amplified Living Solutions"
 }
