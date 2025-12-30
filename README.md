@@ -1,65 +1,74 @@
-# Qwik City App ⚡️
+# Solar Amplified Living
 
-- [Qwik Docs](https://qwik.dev/)
-- [Discord](https://qwik.dev/chat)
-- [Qwik GitHub](https://github.com/QwikDev/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
+A modern website for Solar Amplified Living - sustainable solar energy solutions.
 
----
+## Tech Stack
 
-## Project Structure
-
-This project is using Qwik with [QwikCity](https://qwik.dev/qwikcity/overview/). QwikCity is just an extra set of tools on top of Qwik to make it easier to build a full site, including directory-based routing, layouts, and more.
-
-Inside your project, you'll see the following directory structure:
-
-```
-├── public/
-│   └── ...
-└── src/
-    ├── components/
-    │   └── ...
-    └── routes/
-        └── ...
-```
-
-- `src/routes`: Provides the directory-based routing, which can include a hierarchy of `layout.tsx` layout files, and an `index.tsx` file as the page. Additionally, `index.ts` files are endpoints. Please see the [routing docs](https://qwik.dev/qwikcity/routing/overview/) for more info.
-
-- `src/components`: Recommended directory for components.
-
-- `public`: Any static assets, like images, can be placed in the public directory. Please see the [Vite public directory](https://vitejs.dev/guide/assets.html#the-public-directory) for more info.
-
-## Add Integrations and deployment
-
-Use the `npm run qwik add` command to add additional integrations. Some examples of integrations includes: Cloudflare, Netlify or Express Server, and the [Static Site Generator (SSG)](https://qwik.dev/qwikcity/guides/static-site-generation/).
-
-```shell
-npm run qwik add # or `yarn qwik add`
-```
+- **Framework**: [Qwik](https://qwik.dev/) with QwikCity
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) + [DaisyUI](https://daisyui.com/)
+- **Deployment**: [Cloudflare Pages](https://pages.cloudflare.com/)
 
 ## Development
 
-Development mode uses [Vite's development server](https://vitejs.dev/). The `dev` command will server-side render (SSR) the output during development.
+```bash
+# Install dependencies
+npm install
 
-```shell
-npm start # or `yarn start`
+# Start development server
+npm start
+
+# Build for production
+npm run build
+
+# Preview production build locally
+npm run preview
 ```
 
-> Note: during dev mode, Vite may request a significant number of `.js` files. This does not represent a Qwik production build.
+## Deployment
 
-## Preview
+### Cloudflare Pages
 
-The preview command will create a production build of the client modules, a production build of `src/entry.preview.tsx`, and run a local server. The preview server is only for convenience to preview a production build locally and should not be used as a production server.
+This project is configured for Cloudflare Pages deployment.
 
-```shell
-npm run preview # or `yarn preview`
+**Option 1: GitHub Integration (Recommended)**
+1. Go to [Cloudflare Pages Dashboard](https://dash.cloudflare.com/)
+2. Create a new Pages project
+3. Connect your GitHub repository (CyberBrown/solampliving)
+4. Configure build settings:
+   - Build command: `npm run build`
+   - Build output directory: `dist`
+5. Deploy!
+
+**Option 2: Direct Deploy (Wrangler CLI)**
+```bash
+# Set your API token
+export CLOUDFLARE_API_TOKEN="your-token-here"
+
+# Deploy
+npm run deploy
 ```
 
-## Production
+## Project Structure
 
-The production build will generate client and server modules by running both client and server build commands. The build command will use Typescript to run a type check on the source code.
-
-```shell
-npm run build # or `yarn build`
 ```
+├── public/              # Static assets
+├── src/
+│   ├── components/      # Reusable components
+│   ├── routes/          # File-based routing
+│   │   ├── index.tsx    # Home page
+│   │   └── layout.tsx   # Root layout
+│   ├── global.css       # Global styles with Tailwind
+│   └── root.tsx         # App root
+├── adapters/
+│   └── cloudflare-pages/ # CF Pages adapter config
+├── wrangler.toml        # Wrangler configuration
+└── package.json
+```
+
+## Domain
+
+Target domain: solampliving.com
+
+## License
+
+All rights reserved.
