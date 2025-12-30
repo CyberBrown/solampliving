@@ -1,65 +1,54 @@
-# Qwik City App ⚡️
+# SolAmp Living
 
-- [Qwik Docs](https://qwik.dev/)
-- [Discord](https://qwik.dev/chat)
-- [Qwik GitHub](https://github.com/QwikDev/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
+Sustainable Solar Amplified Living Solutions - A Qwik-powered website for solar energy solutions.
 
----
+## Tech Stack
 
-## Project Structure
-
-This project is using Qwik with [QwikCity](https://qwik.dev/qwikcity/overview/). QwikCity is just an extra set of tools on top of Qwik to make it easier to build a full site, including directory-based routing, layouts, and more.
-
-Inside your project, you'll see the following directory structure:
-
-```
-├── public/
-│   └── ...
-└── src/
-    ├── components/
-    │   └── ...
-    └── routes/
-        └── ...
-```
-
-- `src/routes`: Provides the directory-based routing, which can include a hierarchy of `layout.tsx` layout files, and an `index.tsx` file as the page. Additionally, `index.ts` files are endpoints. Please see the [routing docs](https://qwik.dev/qwikcity/routing/overview/) for more info.
-
-- `src/components`: Recommended directory for components.
-
-- `public`: Any static assets, like images, can be placed in the public directory. Please see the [Vite public directory](https://vitejs.dev/guide/assets.html#the-public-directory) for more info.
-
-## Add Integrations and deployment
-
-Use the `npm run qwik add` command to add additional integrations. Some examples of integrations includes: Cloudflare, Netlify or Express Server, and the [Static Site Generator (SSG)](https://qwik.dev/qwikcity/guides/static-site-generation/).
-
-```shell
-npm run qwik add # or `yarn qwik add`
-```
+- [Qwik](https://qwik.dev/) - Resumable framework
+- [Qwik City](https://qwik.dev/qwikcity/overview/) - Meta-framework
+- [Tailwind CSS v4](https://tailwindcss.com/) - Utility-first CSS
+- [DaisyUI](https://daisyui.com/) - Component library
+- [Cloudflare Pages](https://pages.cloudflare.com/) - Edge deployment
 
 ## Development
 
-Development mode uses [Vite's development server](https://vitejs.dev/). The `dev` command will server-side render (SSR) the output during development.
+```bash
+# Install dependencies
+pnpm install
 
-```shell
-npm start # or `yarn start`
+# Start development server
+pnpm dev
 ```
 
-> Note: during dev mode, Vite may request a significant number of `.js` files. This does not represent a Qwik production build.
+## Building
 
-## Preview
+```bash
+# Build client and server
+pnpm run build.client && pnpm run build.server
 
-The preview command will create a production build of the client modules, a production build of `src/entry.preview.tsx`, and run a local server. The preview server is only for convenience to preview a production build locally and should not be used as a production server.
-
-```shell
-npm run preview # or `yarn preview`
+# Or use wrangler to serve locally
+pnpm serve
 ```
 
-## Production
+## Deployment
 
-The production build will generate client and server modules by running both client and server build commands. The build command will use Typescript to run a type check on the source code.
+Deployed to Cloudflare Pages:
 
-```shell
-npm run build # or `yarn build`
+```bash
+pnpm deploy
 ```
+
+## Project Structure
+
+```
+├── adapters/
+│   └── cloudflare-pages/   # Cloudflare Pages adapter
+├── public/                 # Static assets
+└── src/
+    ├── components/         # Reusable components
+    └── routes/             # File-based routing
+```
+
+## License
+
+All rights reserved.
