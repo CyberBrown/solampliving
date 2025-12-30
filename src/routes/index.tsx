@@ -77,7 +77,7 @@ export default component$(() => {
           <p>Powering a sustainable future since 2024</p>
         </div>
         <div>
-          <p>Copyright © 2024 - All rights reserved</p>
+          <p>Copyright © {new Date().getFullYear()} - All rights reserved</p>
         </div>
       </footer>
     </div>
