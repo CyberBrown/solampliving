@@ -70,16 +70,6 @@ export default component$(() => {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer class="footer footer-center p-10 bg-base-300 text-base-content">
-        <div>
-          <p class="font-bold text-lg">Solar Amplified Living</p>
-          <p>Powering a sustainable future since 2024</p>
-        </div>
-        <div>
-          <p>Copyright © {new Date().getFullYear()} - All rights reserved</p>
-        </div>
-      </footer>
     </div>
   );
 });
