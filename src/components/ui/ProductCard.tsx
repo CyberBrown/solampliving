@@ -66,7 +66,7 @@ const getStockBadge = (
       return {
         label: "Limited Stock",
         bgClass: "bg-bronze",
-        textClass: "text-forest",
+        textClass: "text-white",
       };
   }
 };
@@ -89,7 +89,7 @@ export const ProductCard = component$<ProductCardProps>((props) => {
   const isAvailable = stockStatus !== "out_of_stock";
 
   return (
-    <div class="card bg-white shadow-md hover:shadow-xl transition-shadow duration-300 group">
+    <div class="card bg-white shadow-md hover:shadow-xl transition-all duration-300 group border border-base-200 hover:border-vibrant/30">
       {/* Image Container */}
       <figure class="relative bg-mist aspect-square overflow-hidden">
         <img
@@ -102,7 +102,7 @@ export const ProductCard = component$<ProductCardProps>((props) => {
         />
         {/* Stock Badge - Top Left */}
         <div
-          class={`absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide ${stockBadge.bgClass} ${stockBadge.textClass}`}
+          class={`absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-subheading font-semibold uppercase tracking-wide shadow-sm ${stockBadge.bgClass} ${stockBadge.textClass}`}
         >
           {stockBadge.label}
         </div>
@@ -110,12 +110,12 @@ export const ProductCard = component$<ProductCardProps>((props) => {
 
       <div class="card-body p-4 gap-2">
         {/* Category Label */}
-        <span class="text-vibrant text-xs font-semibold uppercase tracking-wider">
+        <span class="text-vibrant text-xs font-subheading font-semibold uppercase tracking-wider">
           {category}
         </span>
 
         {/* Product Title */}
-        <h3 class="card-title text-forest text-lg font-medium leading-tight line-clamp-2">
+        <h3 class="card-title text-forest text-lg font-headline font-medium leading-tight line-clamp-2">
           <Link href={productUrl} class="hover:text-vibrant transition-colors">
             {title}
           </Link>
@@ -123,7 +123,7 @@ export const ProductCard = component$<ProductCardProps>((props) => {
 
         {/* Specs - Pipe Separated */}
         {specs.length > 0 && (
-          <p class="text-neutral text-sm">
+          <p class="text-neutral text-sm font-mono">
             {specs.map((spec, index) => (
               <span key={spec}>
                 {spec}
@@ -138,18 +138,18 @@ export const ProductCard = component$<ProductCardProps>((props) => {
         {/* Price Display */}
         <div class="mt-2">
           {price.type === "fixed" && (
-            <p class="text-forest text-xl font-bold">
+            <p class="text-forest text-xl font-headline font-bold">
               {formatPrice(price.amount)}
             </p>
           )}
           {price.type === "starting_at" && (
             <p class="text-forest">
-              <span class="text-sm text-neutral">Starting at </span>
-              <span class="text-xl font-bold">{formatPrice(price.amount)}</span>
+              <span class="text-sm text-neutral font-body">Starting at </span>
+              <span class="text-xl font-headline font-bold">{formatPrice(price.amount)}</span>
             </p>
           )}
           {price.type === "call_for_quote" && (
-            <p class="text-solamp-blue text-lg font-semibold">
+            <p class="text-solamp-blue text-lg font-subheading font-semibold">
               Request a Quote
             </p>
           )}
