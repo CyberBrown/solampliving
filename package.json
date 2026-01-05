@@ -1,6 +1,6 @@
 {
   "name": "solampliving",
-  "description": "Solar Amplified Living - Website for solampliving.com",
+  "description": "Solar Amplified Living - Sustainable living resources and community",
   "engines": {
     "node": "^18.17.0 || ^20.3.0 || >=21.0.0"
   },
@@ -8,19 +8,19 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "npm run build.client && npm run build.server",
+    "build": "qwik build",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
-    "build.server": "vite build -c adapters/cloudflare-pages/vite.config.ts",
     "build.types": "tsc --incremental --noEmit",
-    "deploy": "wrangler pages deploy dist/",
+    "build.server": "vite build -c adapters/cloudflare-pages/vite.config.ts",
+    "deploy": "npm run build && wrangler pages deploy dist",
+    "serve": "wrangler pages dev dist",
     "dev": "vite --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
     "lint": "eslint \"src/**/*.ts*\"",
     "preview": "qwik build preview && vite preview --open",
-    "serve": "wrangler pages dev dist/",
     "start": "vite --open --mode ssr",
     "qwik": "qwik"
   },
@@ -28,8 +28,6 @@
     "@builder.io/qwik": "^1.18.0",
     "@builder.io/qwik-city": "^1.18.0",
     "@eslint/js": "latest",
-    "@tailwindcss/postcss": "^4.1.18",
-    "@tailwindcss/vite": "^4.1.18",
     "@types/node": "20.19.0",
     "autoprefixer": "^10.4.23",
     "daisyui": "^5.5.14",
@@ -43,7 +41,7 @@
     "typescript-eslint": "8.38.0",
     "typescript-plugin-css-modules": "latest",
     "undici": "*",
-    "vite": "^7.2.6",
+    "vite": "7.2.6",
     "vite-tsconfig-paths": "^4.2.1",
     "wrangler": "^4.54.0"
   }
