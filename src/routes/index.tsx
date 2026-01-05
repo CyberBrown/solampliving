@@ -1,11 +1,12 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { ProjectTypes } from "~/components/project-types";
 
 export default component$(() => {
   return (
     <div class="min-h-screen bg-base-200">
       {/* Hero Section */}
-      <div class="hero min-h-screen bg-gradient-to-br from-orange-500 via-yellow-400 to-green-500">
+      <div class="hero min-h-[80vh] bg-gradient-to-br from-solamp-forest via-forest to-solamp-green/80">
         <div class="hero-overlay bg-opacity-30"></div>
         <div class="hero-content text-center text-neutral-content">
           <div class="max-w-2xl">
@@ -25,6 +26,11 @@ export default component$(() => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Project Types Ecosystem Section */}
+      <div id="projects">
+        <ProjectTypes />
       </div>
 
       {/* Features Section */}
@@ -58,15 +64,15 @@ export default component$(() => {
       </div>
 
       {/* CTA Section */}
-      <div class="py-16 px-4 bg-orange-500 text-white">
+      <div class="py-16 px-4 bg-solamp-forest text-white">
         <div class="max-w-4xl mx-auto text-center">
-          <h2 class="text-3xl font-bold mb-4">Ready to Go Solar?</h2>
+          <h2 class="text-3xl font-bold mb-4">Not Sure Where to Start?</h2>
           <p class="text-lg mb-8 text-white/90">
-            Contact us today for a free consultation and quote.
+            Our team can help you design the perfect system for your needs. Get a free consultation.
           </p>
-          <button class="btn btn-lg bg-white text-orange-600 hover:bg-gray-100 border-none">
-            Contact Us
-          </button>
+          <a href="#contact" class="btn btn-lg bg-solamp-bronze text-solamp-forest hover:bg-bronze-light border-none">
+            Get Free Quote
+          </a>
         </div>
       </div>
 
